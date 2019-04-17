@@ -76,13 +76,14 @@ module "elasticache_redis" {
 
 | Name                       | Description                                                                                                               |  Type  |        Default         | Required |
 | -------------------------- | ------------------------------------------------------------------------------------------------------------------------- | :----: | :--------------------: | :------: |
-| ingress_cidr_blocks        | List of Ingress CIDR blocks.                                                                                              |  list  |           -            |   no    |
+| ingress_cidr_blocks        | List of Ingress CIDR blocks.                                                                                              |  list  |           -            |   no     |
 | name                       | The replication group identifier. This parameter is stored as a lowercase string.                                         | string |           -            |   yes    |
 | node_type                  | The compute and memory capacity of the nodes in the node group.                                                           | string |           -            |   yes    |
 | number_cache_clusters      | The number of cache clusters (primary and replicas) this replication group will have.                                     | string |           -            |   yes    |
 | subnet_ids                 | List of VPC Subnet IDs for the cache subnet group.                                                                        |  list  |           -            |   yes    |
 | vpc_id                     | VPC Id to associate with Redis ElastiCache.                                                                               | string |           -            |   yes    |
 | apply_immediately          | Specifies whether any modifications are applied immediately, or during the next maintenance window.                       | string |        `false`         |    no    |
+| auto_minor_version_upgrade | Specifies whether a minor engine upgrades will be applied automatically to the Cluster during the maintenance window.     | string |         `true`         |    no    |
 | at_rest_encryption_enabled | Whether to enable encryption at rest.                                                                                     | string |         `true`         |    no    |
 | automatic_failover_enabled | Specifies whether a read-only replica will be automatically promoted to read/write primary if the existing primary fails. | string |         `true`         |    no    |
 | description                | The description of the all resources.                                                                                     | string | `Managed by Terraform` |    no    |

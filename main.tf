@@ -94,8 +94,8 @@ resource "aws_elasticache_replication_group" "default" {
 
   # (Optional) Defaults to true.. Specifies whether a minor engine upgrades will be applied automatically 
   # to the underlying Cache Cluster instances during the maintenance window.
-
-  # auto_minor_version_upgrade = "${var.auto_minor_version_upgrade}"
+  # https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group.html#auto_minor_version_upgrade
+  auto_minor_version_upgrade = "${var.auto_minor_version_upgrade}"
 
   # A user-created description for the replication group.
   replication_group_description = "${var.description}"

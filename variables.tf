@@ -96,6 +96,12 @@ variable "apply_immediately" {
   description = "Specifies whether any modifications are applied immediately, or during the next maintenance window."
 }
 
+variable "auto_minor_version_upgrade" {
+  default     = true
+  type        = "string"
+  description = "Specifies whether a minor engine upgrades will be applied automatically to the underlying Cache Cluster instances during the maintenance window."
+}
+
 variable "family" {
   default     = "redis5.0"
   type        = "string"
