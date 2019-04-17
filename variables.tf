@@ -5,19 +5,19 @@ variable "name" {
 
 variable "number_cache_clusters" {
   type        = "string"
-  description = "The number of cache clusters (primary and replicas) this replication group will have. Required if replicas_per_node_group and num_node_groups not set."
+  description = "The number of cache clusters (nodes: primary + replicas) this replication group will have. Required."
   default     = 0
 }
 
 variable "replicas_per_node_group" {
   type        = "string"
-  description = "Specify the number of replica nodes in each node group. Valid values are 0 to 5. Changing this number will force a new resource. Required if number_cache_clusters. Triggers cluster mode on."
+  description = "Specify the number of replica nodes in each node group. Valid values are 0 to 5. Changing this number will force a new resource. Optional. Triggers cluster mode on."
   default     = 0
 }
 
 variable "num_node_groups" {
   type        = "string"
-  description = "Specify the number of node groups (shards) for this Redis replication group. Changing this number will trigger an online resizing operation before other settings modifications. Required if number_cache_clusters. Triggers cluster mode on."
+  description = "Specify the number of node groups (shards) for this Redis replication group. Changing this number will trigger an online resizing operation before other settings modifications. Optional. Triggers cluster mode on."
   default     = 0
 }
 
