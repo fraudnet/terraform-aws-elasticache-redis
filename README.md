@@ -76,7 +76,7 @@ module "elasticache_redis" {
 
 | Name                       | Description                                                                                                               |  Type  |        Default         | Required |
 | -------------------------- | ------------------------------------------------------------------------------------------------------------------------- | :----: | :--------------------: | :------: |
-| ingress_cidr_blocks        | List of Ingress CIDR blocks.                                                                                              |  list  |           -            |   yes    |
+| ingress_cidr_blocks        | List of Ingress CIDR blocks.                                                                                              |  list  |           -            |   no    |
 | name                       | The replication group identifier. This parameter is stored as a lowercase string.                                         | string |           -            |   yes    |
 | node_type                  | The compute and memory capacity of the nodes in the node group.                                                           | string |           -            |   yes    |
 | number_cache_clusters      | The number of cache clusters (primary and replicas) this replication group will have.                                     | string |           -            |   yes    |

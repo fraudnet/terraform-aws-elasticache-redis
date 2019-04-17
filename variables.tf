@@ -26,6 +26,7 @@ variable "vpc_id" {
 variable "ingress_cidr_blocks" {
   type        = "list"
   description = "List of Ingress CIDR blocks."
+  default = []
 }
 
 variable "engine_version" {
