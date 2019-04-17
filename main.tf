@@ -109,6 +109,11 @@ resource "aws_elasticache_parameter_group" "default" {
   name        = "${var.name}"
   family      = "${var.family}"
   description = "${var.description}"
+
+  parameter {
+    name  = "cluster-enabled"
+    value = "${var.num_node_groups > 0 ? "yes": "no"}"
+  }
 }
 
 # https://www.terraform.io/docs/providers/aws/r/elasticache_subnet_group.html
