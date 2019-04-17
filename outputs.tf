@@ -8,7 +8,8 @@ output "elasticache_replication_group_primary_endpoint_address" {
 
   # value = "${element(compact(concat(list(var.replicas_per_node_group == "0" ? "" : "Not set"), list(aws_elasticache_replication_group.default.primary_endpoint_address ? aws_elasticache_replication_group.default.primary_endpoint_address :""))), 0)}"
 
-  value = "${join("", aws_elasticache_replication_group.default.*.primary_endpoint_address)}"
+  # value = "${join("", aws_elasticache_replication_group.default.*.primary_endpoint_address)}"
+  value = "${aws_elasticache_replication_group.default.primary_endpoint_address}"
   description = "The address of the endpoint for the primary node in the replication group."
 }
 
