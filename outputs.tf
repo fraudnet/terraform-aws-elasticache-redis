@@ -13,6 +13,11 @@ output "elasticache_replication_group_member_clusters" {
   description = "The identifiers of all the nodes that are part of this replication group."
 }
 
+output "elasticache_replication_group_configuration_endpoint_address" {
+  value       = "${aws_elasticache_replication_group.default.configuration_endpoint_address }"
+  description = "The address of the replication group configuration endpoint when cluster mode is enabled."
+}
+
 output "elasticache_parameter_group_id" {
   value       = "${aws_elasticache_parameter_group.default.id}"
   description = "The ElastiCache parameter group name."

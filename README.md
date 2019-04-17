@@ -98,20 +98,21 @@ module "elasticache_redis" {
 
 ## Outputs
 
-| Name                                                   | Description                                                                |
-| ------------------------------------------------------ | -------------------------------------------------------------------------- |
-| elasticache_parameter_group_id                         | The ElastiCache parameter group name.                                      |
-| elasticache_replication_group_id                       | The ID of the ElastiCache Replication Group.                               |
-| elasticache_replication_group_member_clusters          | The identifiers of all the nodes that are part of this replication group.  |
-| elasticache_replication_group_primary_endpoint_address | The address of the endpoint for the primary node in the replication group. |
-| security_group_arn                                     | The ARN of the Redis ElastiCache security group.                           |
-| security_group_description                             | The description of the Redis ElastiCache security group.                   |
-| security_group_egress                                  | The egress rules of the Redis ElastiCache security group.                  |
-| security_group_id                                      | The ID of the Redis ElastiCache security group.                            |
-| security_group_ingress                                 | The ingress rules of the Redis ElastiCache security group.                 |
-| security_group_name                                    | The name of the Redis ElastiCache security group.                          |
-| security_group_owner_id                                | The owner ID of the Redis ElastiCache security group.                      |
-| security_group_vpc_id                                  | The VPC ID of the Redis ElastiCache security group.                        |
+| Name                                                         | Description                                                                               |
+| ------------------------------------------------------------ | ----------------------------------------------------------------------------------------- |
+| elasticache_parameter_group_id                               | The ElastiCache parameter group name.                                                     |
+| elasticache_replication_group_id                             | The ID of the ElastiCache Replication Group.                                              |
+| elasticache_replication_group_member_clusters                | The identifiers of all the nodes that are part of this replication group.                 |
+| elasticache_replication_group_primary_endpoint_address       | The address of the endpoint for the primary node in the replication group.                |
+| elasticache_replication_group_configuration_endpoint_address | The address of the replication group configuration endpoint when cluster mode is enabled. |
+| security_group_arn                                           | The ARN of the Redis ElastiCache security group.                                          |
+| security_group_description                                   | The description of the Redis ElastiCache security group.                                  |
+| security_group_egress                                        | The egress rules of the Redis ElastiCache security group.                                 |
+| security_group_id                                            | The ID of the Redis ElastiCache security group.                                           |
+| security_group_ingress                                       | The ingress rules of the Redis ElastiCache security group.                                |
+| security_group_name                                          | The name of the Redis ElastiCache security group.                                         |
+| security_group_owner_id                                      | The owner ID of the Redis ElastiCache security group.                                     |
+| security_group_vpc_id                                        | The VPC ID of the Redis ElastiCache security group.                                       |
 
 ## Development
 
