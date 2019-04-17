@@ -23,7 +23,7 @@ resource "aws_elasticache_replication_group" "default" {
   # If automatic_failover_enabled is true, the value of this parameter must be at least 2.
   # The maximum permitted value for number_cache_clusters is 6 (1 primary plus 5 replicas).
   # https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Scaling.RedisReplGrps.html
-  number_cache_clusters = "${var.number_cache_clusters}"
+  number_cache_clusters = "${var.number_cache_clusters}" # TODO: make it dynamic if cluster mode enabled.
 
   # Defined together those trigger cluster mode on.
   # https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group.html#cluster_mode
