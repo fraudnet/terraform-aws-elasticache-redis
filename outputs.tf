@@ -13,7 +13,7 @@ output "elasticache_replication_group_primary_endpoint_address" {
 
 output "elasticache_replication_group_member_clusters" {
   # value       = "${ join("", aws_elasticache_replication_group.default.member_clusters) }"  # conditional output hack
-  value = "${element(compact(concat(list(var.replicas_per_node_group == "0" ? "" : "Not set"), list(aws_elasticache_replication_group.default.member_clusters))), 0)}"
+  value = "${element(compact(concat(list(var.replicas_per_node_group == "0" ? "" : "Not set"), aws_elasticache_replication_group.default.member_clusters)), 0)}"
   description = "The identifiers of all the nodes that are part of this replication group."
 }
 
