@@ -4,17 +4,17 @@ output "elasticache_replication_group_id" {
 }
 
 output "elasticache_replication_group_primary_endpoint_address" {
-  value       = "${aws_elasticache_replication_group.default.primary_endpoint_address}"
+  value       = "${ join("", aws_elasticache_replication_group.default.primary_endpoint_address) }" # conditional output hack
   description = "The address of the endpoint for the primary node in the replication group."
 }
 
 output "elasticache_replication_group_member_clusters" {
-  value       = "${aws_elasticache_replication_group.default.member_clusters}"
+  value       = "${ join("", aws_elasticache_replication_group.default.member_clusters) }"  # conditional output hack
   description = "The identifiers of all the nodes that are part of this replication group."
 }
 
 output "elasticache_replication_group_configuration_endpoint_address" {
-  value       = "${aws_elasticache_replication_group.default.configuration_endpoint_address }"
+  value       = "${ join("", aws_elasticache_replication_group.default.configuration_endpoint_address) }"   # conditional output hack
   description = "The address of the replication group configuration endpoint when cluster mode is enabled."
 }
 
