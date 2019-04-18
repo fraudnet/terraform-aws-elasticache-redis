@@ -3,12 +3,6 @@ variable "name" {
   description = "The replication group identifier. This parameter is stored as a lowercase string."
 }
 
-variable "number_cache_clusters" {
-  type        = "string"
-  description = "The number of cache clusters (nodes: primary + replicas) this replication group will have. Required."
-  default     = 0
-}
-
 variable "replicas_per_node_group" {
   type        = "string"
   description = "Specify the number of replica nodes in each node group. Valid values are 0 to 5. Changing this number will force a new resource. Optional. Triggers cluster mode on."
