@@ -4,7 +4,7 @@
 [![GitHub tag](https://img.shields.io/github/tag/tmknom/terraform-aws-elasticache-redis.svg)](https://registry.terraform.io/modules/tmknom/elasticache-redis/aws)
 [![License](https://img.shields.io/github/license/tmknom/terraform-aws-elasticache-redis.svg)](https://opensource.org/licenses/Apache-2.0)
 
-Terraform module which creates Redis ElastiCache resources on AWS.
+Terraform module which creates Redis ElastiCache resources on AWS with Cluster Mode On. 
 
 ## Description
 
@@ -79,9 +79,8 @@ module "elasticache_redis" {
 | ingress_cidr_blocks        | List of Ingress CIDR blocks.                                                                                                                                                                                         |  list  |           -            |   no     |
 | name                       | The replication group identifier. This parameter is stored as a lowercase string.                                                                                                                                    | string |           -            |   yes    |
 | node_type                  | The compute and memory capacity of the nodes in the node group.                                                                                                                                                      | string |           -            |   yes    |
-| number_cache_clusters      | The number of cache clusters (nodes: primary + replicas) this replication group will have. Required.                                                                                                                 | string |           -            |   yes    |
-| replicas_per_node_group    | Specify the number of replica nodes in each node group. Valid values are 0 to 5. Changing this number will force a new resource. Optional. Triggers cluster mode on.                                                 | string |           -            |   yes    |
-| num_node_groups            | Specify the number of node groups (shards) for this Redis replication group. Changing this number will trigger an online resizing operation before other settings modifications. Optional. Triggers cluster mode on. | string |           -            |   yes    |
+| replicas_per_node_group    | Required. Specify the number of replica nodes in each node group. Valid values are 0 to 5. Changing this number will force a new resource.                                                                           | string |           -            |   yes    |
+| num_node_groups            | Required. Specify the number of node groups (shards) for this Redis replication group. Changing this number will trigger an online resizing operation before other settings modifications.                           | string |           -            |   yes    |
 | subnet_ids                 | List of VPC Subnet IDs for the cache subnet group.                                                                                                                                                                   |  list  |           -            |   yes    |
 | vpc_id                     | VPC Id to associate with Redis ElastiCache.                                                                                                                                                                          | string |           -            |   yes    |
 | apply_immediately          | Specifies whether any modifications are applied immediately, or during the next maintenance window.                                                                                                                  | string |        `false`         |    no    |
