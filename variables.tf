@@ -30,18 +30,15 @@ variable "vpc_id" {
   description = "VPC Id to associate with Redis ElastiCache."
 }
 
-variable "ingress_cidr_blocks" {
-  type        = "list"
-  description = "List of Ingress CIDR blocks."
-  default     = []
-}
-
 variable "engine_version" {
   default     = "5.0.0"
   type        = "string"
   description = "The version number of the cache engine to be used for the cache clusters in this replication group."
 }
-
+variable "security_group_id" {
+  type = "string"
+  description = "Security group the redis will use"
+}
 variable "port" {
   default     = 6379
   type        = "string"

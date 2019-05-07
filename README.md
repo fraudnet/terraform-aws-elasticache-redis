@@ -32,7 +32,7 @@ module "elasticache_redis" {
 
   subnet_ids          = ["${var.subnet_ids}"]
   vpc_id              = "${var.vpc_id}"
-  ingress_cidr_blocks = ["${var.ingress_cidr_blocks}"]
+  security_group      = ["${var.security_group}"]
 }
 ```
 
@@ -59,7 +59,7 @@ module "elasticache_redis" {
 
   subnet_ids          = ["${var.subnet_ids}"]
   vpc_id              = "${var.vpc_id}"
-  ingress_cidr_blocks = ["${var.ingress_cidr_blocks}"]
+  security_group      = ["${var.security_group}"]
 
   tags = {
     Environment = "prod"
@@ -76,7 +76,7 @@ module "elasticache_redis" {
 
 | Name                       | Description                                                                                                                                                                                                          |  Type  |        Default         | Required |
 | -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----: | :--------------------: | :------: |
-| ingress_cidr_blocks        | List of Ingress CIDR blocks.                                                                                                                                                                                         |  list  |           -            |   no     |
+| security_group             | The security group that redis will work in.                                                                                                                                                                          | string |           -            |   yes    |
 | name                       | The replication group identifier. This parameter is stored as a lowercase string.                                                                                                                                    | string |           -            |   yes    |
 | node_type                  | The compute and memory capacity of the nodes in the node group.                                                                                                                                                      | string |           -            |   yes    |
 | replicas_per_node_group    | Required. Specify the number of replica nodes in each node group. Valid values are 0 to 5. Changing this number will force a new resource.                                                                           | string |           -            |   yes    |
@@ -106,14 +106,7 @@ module "elasticache_redis" {
 | elasticache_replication_group_member_clusters                | The identifiers of all the nodes that are part of this replication group.                 |
 | elasticache_replication_group_primary_endpoint_address       | The address of the endpoint for the primary node in the replication group.                |
 | elasticache_replication_group_configuration_endpoint_address | The address of the replication group configuration endpoint when cluster mode is enabled. |
-| security_group_arn                                           | The ARN of the Redis ElastiCache security group.                                          |
-| security_group_description                                   | The description of the Redis ElastiCache security group.                                  |
-| security_group_egress                                        | The egress rules of the Redis ElastiCache security group.                                 |
 | security_group_id                                            | The ID of the Redis ElastiCache security group.                                           |
-| security_group_ingress                                       | The ingress rules of the Redis ElastiCache security group.                                |
-| security_group_name                                          | The name of the Redis ElastiCache security group.                                         |
-| security_group_owner_id                                      | The owner ID of the Redis ElastiCache security group.                                     |
-| security_group_vpc_id                                        | The VPC ID of the Redis ElastiCache security group.                                       |
 
 ## Development
 
