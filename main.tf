@@ -4,6 +4,7 @@
 
 # https://www.terraform.io/docs/providers/aws/r/elasticache_replication_group.html
 resource "aws_elasticache_replication_group" "default" {
+  multi_az_enabled     = var.multi_az_enabled
   engine               = "redis"
   parameter_group_name = aws_elasticache_parameter_group.default.name
   subnet_group_name    = aws_elasticache_subnet_group.default.name

@@ -113,3 +113,6 @@ variable "tags" {
   description = "A mapping of tags to assign to all resources."
 }
 
+variable "multi_az_enabled" {
+  default = true
+}
